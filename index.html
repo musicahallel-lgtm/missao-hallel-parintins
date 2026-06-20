@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Missão Hallel Parintins | Comunidade Católica Hallel</title>
+<meta name="description" content="Missão Hallel Parintins — Comunidade Católica Hallel. Ser resgate de almas para Deus, através do sacrifício de louvor. Retiros, adoração, noites de louvor e formação em Parintins/AM." />
+<meta property="og:title" content="Missão Hallel Parintins" />
+<meta property="og:description" content="Ser resgate de almas para Deus, através do sacrifício de louvor." />
+<meta property="og:type" content="website" />
+<link rel="icon" href="logo.png" type="image/png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --verde:#1c8a3f;
+    --verde-escuro:#13692f;
+    --vermelho:#d4231d;
+    --vermelho-escuro:#a8160f;
+    --laranja:#f47b20;
+    --amarelo:#f9c80e;
+    --grad-quente:linear-gradient(180deg,#d4231d 0%,#f47b20 55%,#f9c80e 100%);
+    --grad-quente-h:linear-gradient(90deg,#d4231d 0%,#f47b20 55%,#f9c80e 100%);
+    --tinta:#23271f;
+    --suave:#f6f5f0;
+    --branco:#ffffff;
+    --sombra:0 14px 40px rgba(0,0,0,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:'Poppins',system-ui,sans-serif;
+    color:var(--tinta);
+    background:var(--branco);
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-weight:700;line-height:1.2}
+  .container{width:min(1120px,92%);margin-inline:auto}
+  section{padding:clamp(3.5rem,7vw,6rem) 0}
+  a{color:inherit}
+
+  /* ===== Topo / Nav ===== */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(10px);
+    border-bottom:3px solid transparent;
+    border-image:var(--grad-quente-h) 1;
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0;gap:1rem}
+  .brand{display:flex;align-items:center;gap:.7rem;font-weight:700;color:var(--verde-escuro)}
+  .brand img{height:52px;width:auto}
+  .brand span{font-size:.95rem;line-height:1.1}
+  .brand small{display:block;font-weight:500;color:var(--vermelho);font-size:.72rem;letter-spacing:.05em}
+  nav ul{display:flex;gap:1.4rem;list-style:none;font-size:.92rem;font-weight:500}
+  nav a{text-decoration:none;color:var(--tinta);transition:color .2s}
+  nav a:hover{color:var(--vermelho)}
+  .menu-btn{display:none;background:none;border:0;font-size:1.6rem;cursor:pointer;color:var(--verde-escuro)}
+  @media(max-width:820px){
+    nav{position:absolute;top:100%;left:0;right:0;background:var(--branco);box-shadow:var(--sombra);
+      max-height:0;overflow:hidden;transition:max-height .3s}
+    nav.open{max-height:340px}
+    nav ul{flex-direction:column;padding:1rem 5%;gap:1rem}
+    .menu-btn{display:block}
+  }
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;text-align:center;color:var(--branco);
+    background:
+      linear-gradient(rgba(19,105,47,.86),rgba(19,105,47,.92)),
+      radial-gradient(circle at 50% 0%,rgba(244,123,32,.35),transparent 60%),
+      var(--verde);
+    padding:clamp(3rem,8vw,6rem) 0 0;
+    overflow:hidden;
+  }
+  .hero .container{position:relative;z-index:2}
+  .hero img.logo{height:clamp(150px,26vw,230px);width:auto;filter:drop-shadow(0 10px 25px rgba(0,0,0,.35));margin-bottom:1.2rem}
+  .hero h1{font-size:clamp(1.9rem,5vw,3.2rem);text-shadow:0 3px 14px rgba(0,0,0,.3)}
+  .hero .carisma{
+    font-family:'Lora',serif;font-style:italic;font-size:clamp(1.1rem,2.6vw,1.55rem);
+    max-width:680px;margin:1.2rem auto 0;color:#fff7e6;
+  }
+  .hero-cta{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;margin:2rem 0 0}
+  .wave{display:block;width:100%;margin-top:2.5rem;line-height:0}
+  .wave svg{display:block;width:100%;height:auto}
+
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;
+    padding:.85rem 1.6rem;border-radius:999px;font-weight:600;
+    text-decoration:none;cursor:pointer;border:0;font-size:1rem;
+    transition:transform .15s,box-shadow .2s;
+  }
+  .btn:hover{transform:translateY(-2px)}
+  .btn-quente{background:var(--grad-quente-h);color:#fff;box-shadow:0 8px 22px rgba(212,35,29,.4)}
+  .btn-branco{background:#fff;color:var(--verde-escuro);box-shadow:var(--sombra)}
+  .btn-verde{background:var(--verde);color:#fff;box-shadow:0 8px 22px rgba(28,138,63,.35)}
+  .btn-outline{background:transparent;border:2px solid #fff;color:#fff}
+
+  /* ===== Ícones próprios (identidade visual) ===== */
+  .ic{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:inline-block;vertical-align:middle}
+  .btn .ic{width:1.2em;height:1.2em;flex:0 0 auto}
+  .card .ico .ic{width:28px;height:28px}
+  .at-item .dot .ic{width:24px;height:24px}
+  .acao-card h3 .ic{width:1.25em;height:1.25em;flex:0 0 auto}
+  .ic-inline{width:1.05em;height:1.05em}
+
+  /* ===== Seções ===== */
+  .eyebrow{
+    display:inline-block;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    font-size:.78rem;color:var(--vermelho);margin-bottom:.6rem;
+  }
+  .titulo{font-size:clamp(1.6rem,3.6vw,2.4rem);color:var(--verde-escuro)}
+  .center{text-align:center}
+  .lead{max-width:760px;margin-inline:auto;color:#4a4f44;font-size:1.06rem;margin-top:.8rem}
+
+  /* Pilares (carisma/espiritualidade/missão) */
+  .pilares{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:2.6rem}
+  .card{
+    background:var(--branco);border-radius:20px;padding:2rem 1.7rem;
+    box-shadow:var(--sombra);border-top:5px solid var(--verde);
+    position:relative;transition:transform .2s;
+  }
+  .card:hover{transform:translateY(-5px)}
+  .card .ico{
+    width:52px;height:52px;border-radius:14px;display:grid;place-items:center;
+    background:var(--grad-quente);color:#fff;font-size:1.5rem;margin-bottom:1rem;
+  }
+  .card h3{color:var(--verde-escuro);font-size:1.2rem;margin-bottom:.5rem}
+  .card p{font-family:'Lora',serif;font-style:italic;color:#444;font-size:1.02rem}
+
+  /* Valores */
+  .valores{background:var(--suave)}
+  .valores-grid{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:2.4rem}
+  .valor{
+    background:#fff;border-radius:16px;padding:1.6rem 1.4rem;text-align:center;
+    box-shadow:0 8px 22px rgba(0,0,0,.06);border-bottom:4px solid var(--laranja);
+  }
+  .valor .n{font-family:'Poppins';font-weight:800;font-size:1.7rem;
+    background:var(--grad-quente-h);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .valor h4{color:var(--verde-escuro);font-size:1.15rem;margin:.3rem 0 .4rem}
+  .valor p{font-size:.92rem;color:#5a5f52}
+
+  /* Atuação */
+  .atuacao-grid{display:grid;gap:1.3rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:2.4rem}
+  .at-item{display:flex;gap:1rem;align-items:flex-start;background:#fff;border-radius:16px;padding:1.4rem;
+    border:1px solid #eee;box-shadow:0 6px 16px rgba(0,0,0,.04)}
+  .at-item .dot{flex:0 0 auto;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    background:var(--verde);color:#fff;font-size:1.25rem}
+  .at-item h4{color:var(--verde-escuro);font-size:1.05rem;margin-bottom:.25rem}
+  .at-item p{font-size:.94rem;color:#555}
+
+  /* Encontros */
+  .encontros{background:var(--suave)}
+  .enc-grid{display:grid;gap:1.4rem;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:2.4rem}
+  .enc-card{background:#fff;border-radius:20px;padding:2rem;box-shadow:var(--sombra);
+    border-left:5px solid var(--vermelho);display:flex;gap:1.1rem;align-items:flex-start;text-align:left}
+  .enc-card .big{flex:0 0 auto;width:48px;height:48px;border-radius:14px;display:grid;place-items:center;
+    background:var(--grad-quente);color:#fff}
+  .enc-card .big .ic{width:26px;height:26px}
+  .enc-card h3{color:var(--verde-escuro);font-size:1.2rem;margin-bottom:.3rem}
+  .enc-card p{color:#555;font-size:.98rem}
+  .enc-card .destaque{font-weight:700;color:var(--vermelho)}
+  .map-btn{display:inline-flex;align-items:center;gap:.4rem;margin-top:.7rem;font-weight:600;
+    color:var(--verde);text-decoration:none;font-size:.92rem}
+  .map-btn:hover{text-decoration:underline}
+
+  /* Galeria */
+  .galeria-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:2.4rem}
+  .galeria-grid figure{margin:0;border-radius:18px;overflow:hidden;box-shadow:var(--sombra);
+    aspect-ratio:4/3;background:var(--suave)}
+  .galeria-grid img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+  .galeria-grid figure:hover img{transform:scale(1.06)}
+
+  /* Faixa de citação */
+  .faixa{background:var(--grad-quente-h);color:#fff;text-align:center}
+  .faixa p{font-family:'Lora',serif;font-style:italic;font-size:clamp(1.2rem,3vw,1.7rem);
+    max-width:780px;margin-inline:auto;text-shadow:0 2px 8px rgba(0,0,0,.15)}
+
+  /* Doação + Oração */
+  .acoes{background:var(--verde-escuro);color:#fff}
+  .acoes-grid{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));margin-top:2.4rem}
+  .acao-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+    border-radius:20px;padding:2rem;backdrop-filter:blur(4px)}
+  .acao-card h3{font-size:1.35rem;margin-bottom:.4rem;display:flex;align-items:center;gap:.5rem}
+  .acao-card p{color:#e8f3ea;font-size:.98rem}
+  .pix-box{background:#fff;color:var(--tinta);border-radius:14px;padding:1rem 1.2rem;margin:1.2rem 0;
+    display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  .pix-box .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:#888}
+  .pix-box .v{font-weight:700;font-size:1.15rem;color:var(--vermelho-escuro);word-break:break-all}
+  .pix-box small{display:block;font-weight:500;color:#555;font-size:.85rem}
+  .copy-btn{background:var(--verde);color:#fff;border:0;border-radius:10px;padding:.6rem 1rem;
+    font-weight:600;cursor:pointer;font-size:.85rem;white-space:nowrap}
+  .copy-btn:hover{background:var(--verde-escuro)}
+
+  /* Convite */
+  .convite{
+    position:relative;text-align:center;color:#fff;overflow:hidden;
+    background:
+      linear-gradient(rgba(19,105,47,.92),rgba(19,105,47,.95)),
+      radial-gradient(circle at 50% 120%,rgba(249,200,14,.4),transparent 55%),
+      var(--verde);
+  }
+  .convite::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 80% 10%,rgba(244,123,32,.35),transparent 45%);
+  }
+  .convite .container{position:relative;z-index:2}
+  .convite img{height:120px;margin-bottom:1.2rem;filter:drop-shadow(0 8px 20px rgba(0,0,0,.35))}
+  .convite h2{font-size:clamp(1.8rem,4.5vw,2.8rem);margin-bottom:.6rem}
+  .convite .verso{font-family:'Lora',serif;font-style:italic;color:var(--amarelo);font-size:1.05rem;margin-bottom:1rem}
+  .convite p.txt{font-family:'Lora',serif;font-size:clamp(1.15rem,2.6vw,1.45rem);max-width:680px;margin:0 auto 2rem;color:#f1f8f2}
+  .convite .hero-cta{margin-top:0}
+
+  /* Rodapé */
+  footer{background:#0f1a13;color:#cfe0d4;text-align:center;padding:2.6rem 0}
+  footer img{height:70px;margin-bottom:1rem;filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))}
+  footer .social{display:flex;gap:1rem;justify-content:center;margin:1rem 0}
+  footer .social a{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;
+    background:rgba(255,255,255,.1);transition:background .2s;text-decoration:none}
+  footer .social a:hover{background:var(--vermelho)}
+  footer .social svg{width:20px;height:20px;fill:#fff}
+  footer small{color:#8aa392;font-size:.82rem}
+
+  /* Botão flutuante de contato (identidade Hallel) */
+  .float-wpp{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;
+    background:var(--grad-quente);display:grid;place-items:center;box-shadow:0 8px 22px rgba(0,0,0,.3);
+    animation:pulse 2.4s infinite;color:#fff}
+  .float-wpp .ic{width:30px;height:30px}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(212,35,29,.5)}70%{box-shadow:0 0 0 16px rgba(212,35,29,0)}100%{box-shadow:0 0 0 0 rgba(212,35,29,0)}}
+
+  .toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);
+    background:var(--verde-escuro);color:#fff;padding:.8rem 1.4rem;border-radius:999px;
+    box-shadow:var(--sombra);opacity:0;pointer-events:none;transition:.3s;font-weight:600;font-size:.9rem;z-index:80}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<!-- ===== Sprite de ícones próprios ===== -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-6.5-4-9-8.2C1.4 9 2.6 5.4 6 5.4c2 0 3.2 1.3 4 2.5.8-1.2 2-2.5 4-2.5 3.4 0 4.6 3.6 3 6.4C18.5 16 12 20 12 20z"/></symbol>
+  <symbol id="i-pray" viewBox="0 0 24 24"><path d="M12 21c-2 0-3.8-1-5.2-2.4C5.2 17.1 4 15 4 13l3-5.8c.4-.8 1.6-.6 1.8.3L10 12V4.6c0-.9 1.4-.9 1.4 0V12l1.2-4.5c.2-.9 1.4-1.1 1.8-.3l3 5.8c0 2-1.2 4.1-2.8 5.6C14 20 13 21 12 21z"/><path d="M12 12v8"/></symbol>
+  <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V6l10-2v10"/><circle cx="6.5" cy="18" r="2.4" fill="currentColor" stroke="none"/><circle cx="16.5" cy="16" r="2.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-dove" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M21.3 4.2c-2.6 1-4.3 2.4-5.3 4.1-2.1-.5-4.1.1-5.8 1.7-1.1 1-1.9 2.4-2.6 4.1 2.2-1.6 4.1-2.1 5.7-1.6.2 1.7-.4 3.4-1.7 5 2.6-.2 4.8-1.6 6.1-3.9 1.3-2.3 1.8-5.2 2.4-8.3l.1-.5c.1-.5-.4-.9-.9-.7zM7.2 14.9c-1.6 1-3 2.6-4.2 4.9 2.6-.6 4.6-1.8 6-3.6-.6-.5-1.2-.9-1.8-1.3z"/><circle cx="17.4" cy="7.6" r=".85" fill="#fff" stroke="none"/></symbol>
+  <symbol id="i-cross" viewBox="0 0 24 24"><path d="M10 3h4v6h6v4h-6v8h-4v-8H4V9h6z" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-mountain" viewBox="0 0 24 24"><path d="M3 19l6-10 4 6 1.5-2.5L21 19z"/><circle cx="17" cy="6" r="2"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M12 6c-2.2-1.3-4.8-1.3-7 0v12c2.2-1.3 4.8-1.3 7 0 2.2-1.3 4.8-1.3 7 0V6c-2.2-1.3-4.8-1.3-7 0z"/><path d="M12 6v12"/></symbol>
+  <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3 2.5-5.5 5.5-5.5S14.5 17 14.5 20"/><circle cx="17.2" cy="9" r="2.2"/><path d="M16 14.3c2.5.5 4.5 2.6 4.5 5.7"/></symbol>
+  <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 3c2.8 3.8 6 6 6 10a6 6 0 11-12 0c0-2 .8-3.2 2-4.2.4 1 1.4 1.7 2 1.7C9.5 8.5 11 5.2 12 3z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21c4.2-5 7-8 7-11a7 7 0 10-14 0c0 3 2.8 6 7 11z"/><circle cx="12" cy="10" r="2.6"/></symbol>
+  <symbol id="i-camera" viewBox="0 0 24 24"><path d="M3 8h3.2L8 6h8l1.8 2H21v11H3z"/><circle cx="12" cy="13.2" r="3.4"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9.5h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+</svg>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="container nav-inner">
+    <a class="brand" href="#inicio">
+      <img src="logo.png" alt="Logo Comunidade Católica Hallel" />
+      <span>Missão Hallel<small>PARINTINS · AM</small></span>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><svg class="ic" style="width:26px;height:26px"><use href="#i-menu"/></svg></button>
+    <nav id="menu">
+      <ul>
+        <li><a href="#sobre" onclick="fecharMenu()">Quem Somos</a></li>
+        <li><a href="#valores" onclick="fecharMenu()">Valores</a></li>
+        <li><a href="#atuacao" onclick="fecharMenu()">Atuação</a></li>
+        <li><a href="#encontros" onclick="fecharMenu()">Encontros</a></li>
+        <li><a href="#galeria" onclick="fecharMenu()">Galeria</a></li>
+        <li><a href="#doar" onclick="fecharMenu()">Doe (Pix)</a></li>
+        <li><a href="#oracao" onclick="fecharMenu()">Oração</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <div class="container">
+    <img class="logo" src="logo.png" alt="Comunidade Católica Hallel" />
+    <h1>Missão Hallel Parintins</h1>
+    <p class="carisma">“Ser resgate de almas para Deus, através do sacrifício de louvor.”</p>
+    <div class="hero-cta">
+      <a class="btn btn-quente" href="#doar"><svg class="ic"><use href="#i-heart"/></svg>Faça uma doação</a>
+      <a class="btn btn-outline" href="#oracao"><svg class="ic"><use href="#i-pray"/></svg>Peça uma oração</a>
+    </div>
+  </div>
+  <div class="wave">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path fill="#ffffff" d="M0,48 C240,90 480,90 720,60 C960,30 1200,30 1440,54 L1440,90 L0,90 Z"/></svg>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="container center">
+    <span class="eyebrow">Quem Somos</span>
+    <h2 class="titulo">Um só carisma, uma só missão</h2>
+    <p class="lead">
+      A Missão Hallel Parintins pertence à <strong>Comunidade Católica Hallel</strong> e vive
+      integralmente o mesmo carisma, espiritualidade, missão e valores da sua sede.
+    </p>
+
+    <div class="pilares">
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-music"/></svg></div>
+        <h3>Nosso Carisma</h3>
+        <p>“Ser resgate de almas para Deus, através do sacrifício de louvor.”</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-dove"/></svg></div>
+        <h3>Nossa Espiritualidade</h3>
+        <p>“Mergulhar no Amor por Excelência, o Espírito Santo, que nos conduz ao Coração de Jesus, perfeito caminho de eternidade ao Pai.”</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg class="ic"><use href="#i-cross"/></svg></div>
+        <h3>Nossa Missão</h3>
+        <p>“Educar e formar almas para a santidade, através da vivência e do testemunho do Amor por Excelência.”</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALORES -->
+<section class="valores" id="valores">
+  <div class="container center">
+    <span class="eyebrow">Nossos Valores</span>
+    <h2 class="titulo">O que nos move</h2>
+    <div class="valores-grid">
+      <div class="valor"><div class="n">01</div><h4>Gratidão</h4><p>Reconhecer e agradecer o amor de Deus em tudo.</p></div>
+      <div class="valor"><div class="n">02</div><h4>Oblação</h4><p>Entrega total da vida como oferta agradável a Deus.</p></div>
+      <div class="valor"><div class="n">03</div><h4>Integridade</h4><p>Coerência entre a fé que professamos e a vida que vivemos.</p></div>
+      <div class="valor"><div class="n">04</div><h4>Intrepidez</h4><p>Coragem e ousadia para anunciar o Evangelho.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ATUAÇÃO -->
+<section id="atuacao">
+  <div class="container center">
+    <span class="eyebrow">Atuação em Parintins</span>
+    <h2 class="titulo">A serviço da Igreja local</h2>
+    <p class="lead">
+      Colocamo-nos a serviço da Igreja em Parintins, colaborando com a evangelização e a formação
+      dos fiéis por meio de diversas iniciativas pastorais e missionárias. Movidos pelo Espírito Santo,
+      buscamos formar discípulos apaixonados por Jesus Cristo e comprometidos com a construção do Reino de Deus.
+    </p>
+
+    <div class="atuacao-grid" style="text-align:left">
+      <div class="at-item"><div class="dot"><svg class="ic"><use href="#i-mountain"/></svg></div><div><h4>Retiros</h4><p>Momentos de deserto e encontro pessoal com Deus.</p></div></div>
+      <div class="at-item"><div class="dot"><svg class="ic"><use href="#i-sun"/></svg></div><div><h4>Adoração ao Santíssimo</h4><p>Adoração ao Santíssimo Sacramento.</p></div></div>
+      <div class="at-item"><div class="dot"><svg class="ic"><use href="#i-music"/></svg></div><div><h4>Noites de Louvor</h4><p>Louvor e adoração que tocam o coração.</p></div></div>
+      <div class="at-item"><div class="dot"><svg class="ic"><use href="#i-book"/></svg></div><div><h4>Formações</h4><p>Crescimento na fé e na vida cristã.</p></div></div>
+      <div class="at-item"><div class="dot"><svg class="ic"><use href="#i-people"/></svg></div><div><h4>Pastoral e Missão</h4><p>Iniciativas missionárias com a Igreja local.</p></div></div>
+      <div class="at-item"><div class="dot"><svg class="ic"><use href="#i-flame"/></svg></div><div><h4>Testemunho</h4><p>Testemunhar o Amor por Excelência onde estivermos.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAIXA -->
+<section class="faixa">
+  <div class="container">
+    <p>“Formar discípulos apaixonados por Jesus Cristo e comprometidos com a construção do Reino de Deus.”</p>
+  </div>
+</section>
+
+<!-- ENCONTROS -->
+<section class="encontros" id="encontros">
+  <div class="container center">
+    <span class="eyebrow">Venha Participar</span>
+    <h2 class="titulo">Nossos Encontros</h2>
+    <p class="lead">Você é muito bem-vindo(a)! Junte-se a nós para louvar e adorar a Deus.</p>
+    <div class="enc-grid">
+      <div class="enc-card">
+        <div class="big"><svg class="ic"><use href="#i-sun"/></svg></div>
+        <div>
+          <h3>Adoração ao Santíssimo</h3>
+          <p class="destaque">Quinta-feira · 19h15</p>
+          <p>Casa da Comunidade Hallel<br>Rua Antônio César de Carvalho, 772 — Santa Rita</p>
+        </div>
+      </div>
+      <div class="enc-card">
+        <div class="big"><svg class="ic"><use href="#i-music"/></svg></div>
+        <div>
+          <h3>Noite de Louvor</h3>
+          <p class="destaque">Sábado · 19h</p>
+          <p>Casa de Vida Hallel<br>Rua Antônio César de Carvalho, 772 — Santa Rita</p>
+        </div>
+      </div>
+    </div>
+    <p style="margin-top:1.8rem">
+      <a class="btn btn-verde" href="https://maps.app.goo.gl/R11q6KKXTV6iXg4x9" target="_blank" rel="noopener"><svg class="ic"><use href="#i-pin"/></svg>Ver endereço no mapa</a>
+    </p>
+  </div>
+</section>
+
+<!-- GALERIA -->
+<section id="galeria">
+  <div class="container center">
+    <span class="eyebrow">Nossa Missão em Imagens</span>
+    <h2 class="titulo">Galeria</h2>
+    <p class="lead">Momentos de fé, louvor e comunhão vividos pela Missão Hallel em Parintins.</p>
+    <div class="galeria-grid">
+      <figure><img src="foto1.jpg" alt="Equipe da Missão Hallel Parintins reunida na igreja" loading="lazy" /></figure>
+      <figure><img src="foto2.jpg" alt="Ministério de música em noite de louvor" loading="lazy" /></figure>
+      <figure><img src="foto3.jpg" alt="Membros da Missão Hallel Parintins" loading="lazy" /></figure>
+      <figure><img src="foto4.jpg" alt="Missionários da Hallel em momento de comunhão" loading="lazy" /></figure>
+    </div>
+    <p style="margin-top:1.6rem">
+      <a class="btn btn-verde" href="https://instagram.com/comunidadehallelparintins" target="_blank" rel="noopener"><svg class="ic"><use href="#i-camera"/></svg>Siga @comunidadehallelparintins</a>
+    </p>
+  </div>
+</section>
+
+<!-- DOAR + ORAÇÃO -->
+<section class="acoes" id="doar">
+  <div class="container center">
+    <span class="eyebrow" style="color:var(--amarelo)">Participe</span>
+    <h2 class="titulo" style="color:#fff">Apoie a Missão e peça oração</h2>
+    <p class="lead" style="color:#e8f3ea">
+      Sua generosidade sustenta a evangelização em Parintins. E se você precisa de oração,
+      estamos aqui por você.
+    </p>
+
+    <div class="acoes-grid" style="text-align:left">
+      <!-- Doação -->
+      <div class="acao-card">
+        <h3><svg class="ic"><use href="#i-heart"/></svg> Doe via Pix</h3>
+        <p>Toda doação é um “sacrifício de louvor” que se transforma em missão.</p>
+        <div class="pix-box">
+          <div>
+            <span class="k">Chave Pix (CPF)</span>
+            <span class="v" id="pixkey">240.675.202-04</span>
+            <small>Maria da Conceição Maciel</small>
+          </div>
+          <button class="copy-btn" onclick="copiarPix()">Copiar chave</button>
+        </div>
+        <p style="font-size:.85rem;color:#cfe0d4">Que Deus recompense generosamente cada doador.</p>
+      </div>
+
+      <!-- Oração -->
+      <div class="acao-card" id="oracao">
+        <h3><svg class="ic"><use href="#i-pray"/></svg> Pedidos de Oração</h3>
+        <p>Confie a nós a sua intenção. Vamos rezar por você e com você.</p>
+        <p style="margin:1rem 0 .3rem;font-weight:600;color:#fff">WhatsApp / Telefone</p>
+        <p class="v" style="font-size:1.3rem;font-weight:700;color:var(--amarelo)">+55 (92) 9407-4064</p>
+        <a class="btn btn-quente" style="margin-top:1.2rem"
+           href="https://wa.me/5592994074064?text=Ol%C3%A1!%20Gostaria%20de%20enviar%20um%20pedido%20de%20ora%C3%A7%C3%A3o%20para%20a%20Miss%C3%A3o%20Hallel%20Parintins."
+           target="_blank" rel="noopener">
+          Enviar pedido pelo WhatsApp
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVITE -->
+<section class="convite" id="convite">
+  <div class="container">
+    <img src="logo.png" alt="Comunidade Católica Hallel Parintins" />
+    <p class="verso">“Servi ao Senhor com alegria!” (Salmo 100,2)</p>
+    <h2>Venha conhecer a Missão Hallel em Parintins</h2>
+    <p class="txt">Há um lugar para você entre nós. Venha viver essa experiência conosco — de louvor, adoração e encontro com o Amor por Excelência. Te esperamos!</p>
+    <div class="hero-cta">
+      <a class="btn btn-quente" href="https://wa.me/5592994074064?text=Ol%C3%A1!%20Quero%20conhecer%20a%20Miss%C3%A3o%20Hallel%20Parintins."><svg class="ic"><use href="#i-chat"/></svg>Quero participar</a>
+      <a class="btn btn-branco" href="#encontros"><svg class="ic"><use href="#i-calendar"/></svg>Ver agenda</a>
+    </div>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer>
+  <div class="container">
+    <img src="logo.png" alt="Comunidade Católica Hallel" />
+    <p style="font-weight:600;color:#fff">Missão Hallel Parintins</p>
+    <p style="font-size:.9rem">Rua Antônio César de Carvalho, 772 — Bairro de Santa Rita · Parintins / AM</p>
+    <p style="font-size:.85rem;color:#9ab3a2">@comunidadehallelparintins</p>
+    <div class="social">
+      <a href="https://instagram.com/comunidadehallelparintins" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm6.95-9.22a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+      </a>
+      <a href="https://facebook.com/comunidadehallelparintins" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.26h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+      </a>
+      <a href="https://wa.me/5592994074064" target="_blank" rel="noopener" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.82 11.82 0 018.413 3.488 11.82 11.82 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.978-1.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.078 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+      </a>
+    </div>
+    <small>© <span id="ano"></span> Missão Hallel Parintins. Todos os direitos reservados.</small>
+  </div>
+</footer>
+
+<a class="float-wpp" href="https://wa.me/5592994074064?text=Ol%C3%A1!%20Gostaria%20de%20enviar%20um%20pedido%20de%20ora%C3%A7%C3%A3o." target="_blank" rel="noopener" aria-label="Fale conosco">
+  <svg class="ic"><use href="#i-chat"/></svg>
+</a>
+
+<div class="toast" id="toast">Chave Pix copiada!</div>
+
+<script>
+  document.getElementById('ano').textContent = new Date().getFullYear();
+  function fecharMenu(){document.getElementById('menu').classList.remove('open')}
+  function copiarPix(){
+    const txt = document.getElementById('pixkey').textContent.trim();
+    navigator.clipboard.writeText(txt).then(()=>{
+      const t=document.getElementById('toast');
+      t.classList.add('show');
+      setTimeout(()=>t.classList.remove('show'),2200);
+    });
+  }
+</script>
+</body>
+</html>
